@@ -24,58 +24,62 @@
             <p id="headsUp"> </p>
           </header>
 
-          <form id="sign-in">
+          <p id="message"></p>
+
+          <h4>Sign In</h4>
+          <form id="signIn">
             <input type="text" name="credentials[email]" placeholder="email"/>
             <br>
             <input type="password" name="credentials[password]" placeholder="password"/>
             <button type="submit">Sign In</button>
           </form>
-          <div id="uiFeedbackDisplay"> </div>
-          <!-- this link is to allow the user to sign up if they havenet used the app before -->
-          <a id="signUpToggleBtn"> Sign Up</a>
-          <!--  HUD for ui feedback -->
+            <br>
+            <br>
+           <div id="uiFeedbackDisplay"> </div>
+           <a id="signUpToggleBtn"></a>
 
-          <form id="sign-up">
+            <h4>Sign Up</h4>
+          <form id="signUp">
             <input type="text" name="credentials[email]" placeholder="email"/>
             <br>
             <input type="password" name="credentials[password]" placeholder="password"/>
             <br>
-            <input type="password" name="credentials[password_confirmation]" placeholder="retype password"/>
+            <input type="password" name="credentials[password_confirmation]" placeholder="confirm password"/>
             <button type="submit">Sign Up</button>
           </form>
 
-          <form id="sign-out">
+          <form id="signOut">
             <input readonly="true" class="no-select">
             <button>Sign Out</button>
-            <a id="settingsToggleBtn"> Settings</a>
           </form>
 
-          <form id="change-password">
+          <form id="changePassword">
             <input type="password" name="passwords[old]" placeholder="old password"/>
             <input type="password" name="passwords[new]" placeholder="new password"/>
             <button> Change Password</button>
           </form>
-          <!-- through this form a user updates a game -->
+          <!-- user updates a building -->
           <form id="buildingUpdateForm">
             <hr/>
             <h4>Edit Building Info</h4>
-            <a id="updateCloseBtn">Close</a>
             <br>
 
             <input type="text"  name="building[id]" placeholder="Building Name"/>
-            <input type="date" name="Built Date[date]" />
+            <label>Built Date:</label>
+            <input type="date" name="Built Date[date]" placeholder="Built Date" />
             <input type="text" name="building[location]" placeholder="Address/Location"/>
             <input type="text" name="building[price]" placeholder="Building Price"/>
             <input type="number" name="square footage" placeholder="Sqftage"/>
             <button type="submit">Update</button>
           </form>
-          <!-- through this form a user create games -->
+          <!-- user create a building -->
           <form id="buildingCreateForm">
             <hr/>
             <h4><label> Add a new building</label></h4>
             <br>
             <input type="text"  name="building[id]" placeholder="Building Name"/>
-            <input type="date" name="Built Date[date]" />
+            <label>Built Date:</label>
+            <input type="date" name="Built Date[date]" placeholder="Built Date" />
             <input type="text" name="building[location]" placeholder="Address/Location"/>
             <input type="text" name="building[price]" placeholder="Building Price"/>
             <input type="number" name="building[price]" placeholder="Sqftage"/>
