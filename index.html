@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <main id="gamesDisplay">
+      <main id="buildingDisplay">
 
 
       </main>
@@ -61,6 +61,12 @@
             <h4>Edit Building Info</h4>
             <a id="updateCloseBtn">Close</a>
             <br>
+
+            <input type="text"  name="building[id]" placeholder="Building Name"/>
+            <input type="date" name="Built Date[date]" />
+            <input type="text" name="building[location]" placeholder="Address/Location"/>
+            <input type="text" name="building[price]" placeholder="Building Price"/>
+            <input type="number" name="square footage" placeholder="Sqftage"/>
             <button type="submit">Update</button>
           </form>
           <!-- through this form a user create games -->
@@ -68,16 +74,11 @@
             <hr/>
             <h4><label> Add a new building</label></h4>
             <br>
-            <input type="text"  name="game[id]" placeholder="Building Name"/>
-            <input type="date" name="Built Date[date]" />
-            <input type="text" name="game[location]" placeholder="Address/Location"/>
-            <input type="text" name="game[home_team]" placeholder="Building Price"/>
-            <input type="number" name="game[home_score]" placeholder="Sqftage"/>
             <input type="text"  name="building[id]" placeholder="Building Name"/>
             <input type="date" name="Built Date[date]" />
             <input type="text" name="building[location]" placeholder="Address/Location"/>
             <input type="text" name="building[price]" placeholder="Building Price"/>
-            <input type="number" name="square footage" placeholder="Sqftage"/>
+            <input type="number" name="building[price]" placeholder="Sqftage"/>
             <button type="submit">Create</button>
           </form>
         </div>
