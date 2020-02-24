@@ -25,6 +25,8 @@ const onSignInSuccess = function (response) {
   $('#signIn').hide()
   $('#signUp').hide()
   $('#message').show()
+  $('#buildingCreateForm').show()
+  $('#buildingUpdateForm').show()
 }
 
 const onSignInFailure = function (response) {
@@ -59,6 +61,8 @@ const onSignOutSuccess = function (response) {
   $('#signUp').show('reset')
   $('#signUp').trigger('reset')
   $('#changePassword').trigger('reset')
+  $('#buildingCreateForm').hide()
+  $('#buildingUpdateForm').hide()
   store.user = null
 }
 
