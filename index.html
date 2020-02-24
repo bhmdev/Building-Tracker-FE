@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Building Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,76 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <main id="gamesDisplay">
+
+
+      </main>
+
+      <aside id="adminPanel">
+        <div class="wrapper">
+          <header>
+            <h1>Building Tracker</h1>
+            <p id="headsUp"> </p>
+          </header>
+
+          <form id="sign-in">
+            <input type="text" name="credentials[email]" placeholder="email"/>
+            <br>
+            <input type="password" name="credentials[password]" placeholder="password"/>
+            <button type="submit">Sign In</button>
+          </form>
+          <div id="uiFeedbackDisplay"> </div>
+          <!-- this link is to allow the user to sign up if they havenet used the app before -->
+          <a id="signUpToggleBtn"> Sign Up</a>
+          <!--  HUD for ui feedback -->
+
+          <form id="sign-up">
+            <input type="text" name="credentials[email]" placeholder="email"/>
+            <br>
+            <input type="password" name="credentials[password]" placeholder="password"/>
+            <br>
+            <input type="password" name="credentials[password_confirmation]" placeholder="retype password"/>
+            <button type="submit">Sign Up</button>
+          </form>
+
+          <form id="sign-out">
+            <input readonly="true" class="no-select">
+            <button>Sign Out</button>
+            <a id="settingsToggleBtn"> Settings</a>
+          </form>
+
+          <form id="change-password">
+            <input type="password" name="passwords[old]" placeholder="old password"/>
+            <input type="password" name="passwords[new]" placeholder="new password"/>
+            <button> Change Password</button>
+          </form>
+          <!-- through this form a user updates a game -->
+          <form id="buildingUpdateForm">
+            <hr/>
+            <h4>Edit Building Info</h4>
+            <a id="updateCloseBtn">Close</a>
+            <br>
+            <input type="text"  name="game[id]" placeholder="Building Name"/>
+            <input type="date"  name="Built Date[date]">
+            <input type="text" name="game[location]" placeholder="Address/Location"/>
+            <input type="text" name="game[home_team]" placeholder="Building Price"/>
+            <input type="number" name="game[home_score]" placeholder="Sqftage"/>
+            <button type="submit">Update</button>
+          </form>
+          <!-- through this form a user create games -->
+          <form id="buildingCreateForm">
+            <hr/>
+            <h4><label> Add a new building</label></h4>
+            <br>
+            <input type="text"  name="game[id]" placeholder="Building Name"/>
+            <input type="date" name="Built Date[date]" />
+            <input type="text" name="game[location]" placeholder="Address/Location"/>
+            <input type="text" name="game[home_team]" placeholder="Building Price"/>
+            <input type="number" name="game[home_score]" placeholder="Sqftage"/>
+            <button type="submit">Create</button>
+          </form>
+        </div>
+      </aside>
+
     </body>
 </html>
