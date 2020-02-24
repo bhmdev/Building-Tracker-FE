@@ -22,7 +22,6 @@ const onSignInSuccess = function (response) {
   store.user = response.user
   $('#changePassword').show()
   $('#signOut').show()
-  $('#boardGame').show()
   $('#signIn').hide()
   $('#signUp').hide()
   $('#message').show()
@@ -59,7 +58,6 @@ const onSignOutSuccess = function (response) {
   $('#signIn').show()
   $('#signUp').show('reset')
   $('#signUp').trigger('reset')
-  $('#onNewGame').hide()
   $('#changePassword').trigger('reset')
   store.user = null
 }
