@@ -47,11 +47,20 @@ const onUpdateBuilding = function (event) {
     .then(ui.onUpdateBuildingSuccess)
     .catch(ui.onUpdateBuildingFailure)
 }
+
+const viewBuilding = function (event) {
+  event.preventDefault()
+  api.buildingsIndex()
+    .then(ui.onViewBuildingsSuccess)
+    .catch(ui.onViewBuildingsFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
   onCreateBuilding,
-  onUpdateBuilding
+  onUpdateBuilding,
+  viewBuilding
 }

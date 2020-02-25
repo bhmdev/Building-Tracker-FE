@@ -18,4 +18,5 @@ $(() => {
   $('#buildingUpdateForm').hide()
   $('#buildingCreateForm').on('submit', authEvents.onCreateBuilding)
   $('#buildingUpdateForm').on('submit', authEvents.onUpdateBuilding)
+  $('#view-buildings').on('submit', authEvents.viewBuilding)
 })

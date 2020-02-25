@@ -78,13 +78,25 @@ const onUpdateBuildingSuccess = function (response) {
   $('#buildingCreateForm').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
-  const showBuildingsHTML = showBuildingsTemplate({buildings: data.buildings})
-  $('.buildingDisplay').append(showBuildingsHTML)
 }
 const onUpdateBuildingFailure = function (response) {
   $('#message').text('Building failed')
   $('#buildingUpdateForm').trigger('reset')
   $('#message').show()
+}
+
+const onViewBuildingsFailure = function (response) {
+  $('#message').text('Building failed')
+  $('#view-building').trigger('reset')
+  $('#message').show()
+}
+
+const onViewBuildingsSuccess = function (response) {
+  $('#message').text('Building failed')
+  $('#message').show()
+  console.log(response)
+  const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
+  $('#buildingDisplay').append(showBuildingsHTML)
 }
 
 module.exports = {
@@ -98,5 +110,7 @@ module.exports = {
   onChangePasswordSuccess,
   onCreateBuildingSuccess,
   onUpdateBuildingSuccess,
-  onUpdateBuildingFailure
+  onUpdateBuildingFailure,
+  onViewBuildingsFailure,
+  onViewBuildingsSuccess
 }

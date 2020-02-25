@@ -60,11 +60,22 @@ const updateBuilding = function (data) {
   })
 }
 
+const buildingsIndex = function () {
+  return $.ajax({
+    url: config.apiUrl + '/buildings/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   createBuilding,
-  updateBuilding
+  updateBuilding,
+  buildingsIndex
 }
