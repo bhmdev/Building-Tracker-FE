@@ -16,4 +16,6 @@ $(() => {
   $('#signOut').on('submit', authEvents.onSignOut)
   $('#buildingCreateForm').hide()
   $('#buildingUpdateForm').hide()
+  $('#buildingCreateForm').on('submit', authEvents.onCreateBuilding)
+  $('#buildingUpdateForm').on('submit', authEvents.onUpdateBuilding)
 })

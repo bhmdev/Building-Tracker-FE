@@ -17,11 +17,10 @@
 
       </main>
 
-      <aside id="adminPanel">
-        <div class="wrapper">
+      <!-- <aside id="adminPanel"> -->
+        <!-- <div class="wrapper"> -->
           <header>
             <h1>Building Tracker</h1>
-            <p id="headsUp"> </p>
           </header>
 
           <p id="message"></p>
@@ -36,8 +35,8 @@
           </form>
             <br>
             <br>
-           <div id="uiFeedbackDisplay"> </div>
-           <a id="signUpToggleBtn"></a>
+           <!-- <div id="uiFeedbackDisplay"> </div>
+           <a id="signUpToggleBtn"></a> -->
 
           <form id="signUp">
             <h4>Sign Up</h4>
@@ -66,30 +65,30 @@
             <h4>Edit Building Info</h4>
             <br>
 
-            <input type="text"  name="building[id]" placeholder="Building Name"/>
+            <!-- <input type="text"  name="building[id]" placeholder="Building Name"/> -->
+            <input type="text" name="building[address]" placeholder="Address/Location"/>
+            <input type="number" name="building[price]" placeholder="Building Price"/>
             <label>Built Date:</label>
-            <input type="date" name="Built Date[date]" placeholder="Built Date" />
-            <input type="text" name="building[location]" placeholder="Address/Location"/>
-            <input type="text" name="building[price]" placeholder="Building Price"/>
-            <input type="number" name="square footage" placeholder="Sqftage"/>
+            <input type="date" name="building[built_date]" placeholder="Built Date" />
+            <input type="number" name="building[sq_feet]" placeholder="Sqftage"/>
             <button type="submit">Update</button>
           </form>
           <!-- user create a building -->
 
           <form id="buildingCreateForm">
-            <hr/>
+            <br/>
             <h4><label> Add a new building</label></h4>
             <br>
-            <input type="text"  name="building[id]" placeholder="Building Name"/>
+            <!-- <input type="text"  name="building[id]" placeholder="Building Name"/> -->
+            <input type="text" name="building[address]" placeholder="Address/Location"/>
+            <input type="number" name="building[price]" placeholder="Building Price"/>
             <label>Built Date:</label>
-            <input type="date" name="Built Date[date]" placeholder="Built Date" />
-            <input type="text" name="building[location]" placeholder="Address/Location"/>
-            <input type="text" name="building[price]" placeholder="Building Price"/>
-            <input type="number" name="building[price]" placeholder="Sqftage"/>
+            <input type="date" name="building[built_date]" placeholder="Built Date" />
+            <input type="number" name="building[sq_feet]" placeholder="Sqftage"/>
             <button type="submit">Create</button>
           </form>
-        </div>
-      </aside>
+        <!-- </div> -->
+      <!-- </aside> -->
 
     </body>
 </html>

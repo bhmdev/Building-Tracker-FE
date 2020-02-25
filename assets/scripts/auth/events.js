@@ -22,7 +22,7 @@ const onChangePassword = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  api.onChangePassword(data)
+  api.changePassword(data)
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)
 }
@@ -31,10 +31,27 @@ const onSignOut = function (event) {
   api.signOut()
     .then(ui.onSignOutSuccess)
 }
-
+const onCreateBuilding = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.createBuilding(data)
+    .then(ui.onCreateBuildingSuccess)
+    .catch(ui.onCreateBuildingFailure)
+}
+const onUpdateBuilding = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.updateBuilding(data)
+    .then(ui.onUpdateBuildingSuccess)
+    .catch(ui.onUpdateBuildingFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onCreateBuilding,
+  onUpdateBuilding
 }

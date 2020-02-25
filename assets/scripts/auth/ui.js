@@ -1,4 +1,5 @@
 const store = require('./../store')
+const showBuildingsTemplate = require('../templates/building-listing.handlebars')
 
 const onSignUpSuccess = function (response) {
   $('#message').text(response.user.email + ' successfully signed up')
@@ -66,6 +67,26 @@ const onSignOutSuccess = function (response) {
   store.user = null
 }
 
+const onCreateBuildingSuccess = function (response) {
+  $('#message').text(" you've successfully made a building ")
+  $('#buildingCreateForm').trigger('reset')
+  $('#message').show()
+  $('#message').addClass('success-message')
+}
+const onUpdateBuildingSuccess = function (response) {
+  $('#message').text(response.user.email + ' successfully updated a building ')
+  $('#buildingCreateForm').trigger('reset')
+  $('#message').show()
+  $('#message').addClass('success-message')
+  const showBuildingsHTML = showBuildingsTemplate({buildings: data.buildings})
+  $('.buildingDisplay').append(showBuildingsHTML)
+}
+const onUpdateBuildingFailure = function (response) {
+  $('#message').text('Building failed')
+  $('#buildingUpdateForm').trigger('reset')
+  $('#message').show()
+}
+
 module.exports = {
   onSignUpFailure,
   onSignUpSuccess,
@@ -74,5 +95,8 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onChangePasswordFailure,
-  onChangePasswordSuccess
+  onChangePasswordSuccess,
+  onCreateBuildingSuccess,
+  onUpdateBuildingSuccess,
+  onUpdateBuildingFailure
 }

@@ -1,0 +1,54 @@
+<!-- {{#each buildings as |building|}}
+  {{log building}}
+  <section data-id="{{building.id}}">
+    <h6>Title:</h6>
+    <h3>
+      {{building.price}}
+    </h3>
+    <h6>Address:</h6>
+    <p>
+      {{#if building.address}}
+        {{building.address}}
+      {{else}}
+        No address provided.
+      {{/if}}
+    </p>
+    <button class="btn btn-danger delete-building" data-id="{{building.id}}">Delete</button>
+  </section>
+
+{{/each}} -->
+
+
+{{#each buildings as |building|}}
+  {{log building}}
+  <section data-id="{{building.id}}">
+    <h3>Building</h3>
+    <h3>
+      {{building.name}}
+    </h3>
+    <p>
+      {{#if building.address}}
+        {{building.address}}
+      {{else}}
+        No address provided
+      {{/if}}
+    </p>
+    <p>
+      {{#if building.price}}
+        {{building.price}}
+      {{else}}
+        No price provided
+      {{/if}}
+    </p>
+    {{#if building.editable}}
+      {{> remove-building id=building.id}}
+      {{> update-building id=building.id}}
+    {{else}}
+      :)
+    {{/if}}
+    <p>
+      {{> create-reading id=building.id}}
+    </p>
+    <button class="btn btn-danger delete-building" data-id="{{building.id}}">Delete</button>
+  </section>
+  {{/each}}

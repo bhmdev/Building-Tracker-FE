@@ -17,7 +17,7 @@ const signIn = function (data) {
   })
 }
 
-const onChangePassword = function (data) {
+const changePassword = function (data) {
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -38,9 +38,33 @@ const signOut = function (data) {
   })
 }
 
+const createBuilding = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/buildings',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
+const updateBuilding = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/buildings/',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  onChangePassword,
-  signOut
+  changePassword,
+  signOut,
+  createBuilding,
+  updateBuilding
 }
