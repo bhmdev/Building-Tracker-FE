@@ -1,7 +1,7 @@
 <h3>Building Tracker README: Front End</h3>
 
 
-Important Links:
+**Important Links:**
 <br>
 [Deployed Client](https://bhmdev.github.io/Building-Tracker-FE/)
 <br>
