@@ -32,7 +32,7 @@ const onSignInSuccess = function (response) {
   $('#buildingCreateForm').show()
   $('#buildingUpdateForm').hide()
   $('#clearBuildings').hide()
-  $('#buildingCreateForm').trigger('reset')
+  $('#buildingDisplay').hide()
 }
 
 const onSignInFailure = function (response) {
@@ -71,36 +71,44 @@ const onSignOutSuccess = function (response) {
   $('#buildingUpdateForm').hide()
   $('#clearBuildings').hide()
   $('#deleteBuilding').hide()
-  $('#buildingDisplay').html('')
+  $('#buildingDisplay').hide()
   $('#view-buildings').hide()
+  $('#buildingCreateForm').trigger('reset')
+  $('#buildingUpdateForm').trigger('reset')
+  $('#deleteBuilding').trigger('reset')
   store.user = null
 }
 
 const onCreateBuildingSuccess = function (response) {
-  $('#message').text(" You've successfully made a building ")
+  $('#message').text(" You've successfully made a building, click view buildings to see your inventory ")
   $('#buildingCreateForm').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
-  $('#buildingDisplay').html('')
-  // $('#view-buildings').show()
-  // $('#buildingUpdateForm').show()
-  api.viewBuilding()
-    .then(onViewBuildingsSuccess)
-    .catch(onViewBuildingsFailure)
+  $('#buildingDisplay').hide()
+  $('#buildingUpdateForm').show()
+  $('#buildingCreateForm').hide()
+  $('#view-buildings').show()
+  $('#changePassword').trigger('reset')
+  $('#buildingUpdateForm').trigger('reset')
+  // api.viewBuilding()
+  //   .then(onViewBuildingsSuccess)
+  //   .catch(onViewBuildingsFailure)
 }
 
 const onCreateBuildingFailure = function (response) {
   $('#message').text('You cannot create a building without filling in all forms')
   $('#buildingUpdateForm').trigger('reset')
   $('#message').show()
+  $('#changePassword').trigger('reset')
 }
 
 const onUpdateBuildingSuccess = function (response) {
   $('#message').text("You've successfully updated a building ")
   $('#buildingUpdateForm').trigger('reset')
+  $('#buildingCreateForm').trigger('reset')
+  $('#changePassword').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
-  $('#buildingDisplay').hide()
   api.viewBuilding()
     .then(onViewBuildingsSuccess)
     .catch(onViewBuildingsFailure)
@@ -108,13 +116,17 @@ const onUpdateBuildingSuccess = function (response) {
 const onUpdateBuildingFailure = function (response) {
   $('#message').text('Update Building failed')
   $('#buildingUpdateForm').trigger('reset')
+  $('#buildingCreateForm').trigger('reset')
   $('#message').show()
+  $('#changePassword').trigger('reset')
 }
 
 const onViewBuildingsFailure = function (response) {
   $('#message').text('Building failed')
   $('#view-building').trigger('reset')
+  $('#buildingCreateForm').trigger('reset')
   $('#message').show()
+  $('#changePassword').trigger('reset')
 }
 
 const onViewBuildingsSuccess = function (response) {
@@ -123,14 +135,17 @@ const onViewBuildingsSuccess = function (response) {
   $('#message').show()
   $('#deleteBuilding').show()
   $('#clearBuildings').show()
-  const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
+  $('#buildingUpdateForm').show()
+  $('#buildingCreateForm').show()
   $('#buildingDisplay').html('')
+  const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
   $('#buildingDisplay').append(showBuildingsHTML)
 }
 const onDeleteBuildingSuccess = function () {
   $('#message').show()
   $('#message').text('Building Deleted')
   $('#deleteBuilding').trigger('reset')
+  $('#changePassword').trigger('reset')
   // events.onViewBuilding()
   api.viewBuilding()
     .then(onViewBuildingsSuccess)
@@ -140,18 +155,20 @@ const onDeleteBuildingSuccess = function () {
   // $('#buildingDisplay').html('')
   // $('#buildingDisplay').append(showBuildingsHTML)
   // $('#buildingDisplay').empty()
+  $('#changePassword').trigger('reset')
 }
 
 const onDeleteBuildingFailure = function (response) {
   $('#message').text('Failed to destroy a building')
   $('#deleteBuilding').trigger('reset')
   $('#message').show()
+  $('#changePassword').trigger('reset')
 }
 
 const clearBuildings = () => {
   $('#buildingDisplay').empty()
   $('#message').text('You have cleared your inventory')
-  $('#view-buildings').show()
+  $('#changePassword').trigger('reset')
 }
 
 module.exports = {
