@@ -18,7 +18,7 @@ const onSignUpFailure = function (response) {
 }
 
 const onSignInSuccess = function (response) {
-  $('#message').text(response.user.email + ' successfully signed in')
+  $('#message').text(response.user.email + ' successfully signed in, fill out the form to add a building')
   $('#signIn').trigger('reset')
   store.user = response.user
   $('#changePassword').show()
@@ -27,7 +27,7 @@ const onSignInSuccess = function (response) {
   $('#signUp').hide()
   $('#message').show()
   $('#buildingCreateForm').show()
-  $('#buildingUpdateForm').show()
+  $('#buildingUpdateForm').hide()
   $('#clearBuildings').hide()
 }
 
@@ -70,11 +70,12 @@ const onSignOutSuccess = function (response) {
 }
 
 const onCreateBuildingSuccess = function (response) {
-  $('#message').text(" you've successfully made a building ")
+  $('#message').text(" You've successfully made a building ")
   $('#buildingCreateForm').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
   $('#view-buildings').show()
+  $('#buildingUpdateForm').show()
 }
 
 const onCreateBuildingFailure = function (response) {
@@ -84,7 +85,7 @@ const onCreateBuildingFailure = function (response) {
 }
 
 const onUpdateBuildingSuccess = function (response) {
-  $('#message').text("you've successfully updated a building ")
+  $('#message').text("You've successfully updated a building ")
   $('#buildingUpdateForm').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
