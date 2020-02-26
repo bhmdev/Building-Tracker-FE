@@ -3,8 +3,8 @@ Building Tracker README: Front End
 
 Important Links:
 
-[Deployed Client] (https://bhmdev.github.io/Building-Tracker-FE/)
-[Deployed API] (https://github.com/bhmdev/Building-Tracker-FE)
+[Deployed Client](https://bhmdev.github.io/Building-Tracker-FE/)
+[Deployed API](https://github.com/bhmdev/Building-Tracker-FE)
 
 
 **Building Tracker Description**
@@ -13,7 +13,7 @@ This application is designed to track potential investment opportunities for com
 
 It's broken down by building Address/Location, cost, Sq Footage, and date built.
 
-The front end is hosted on [github pages] (https://github.com/bhmdev/Building-Tracker-FE), and the backend API is hosted on [heroku] (https://building-tracker-api.herokuapp.com/).
+The front end is hosted on [github pages](https://github.com/bhmdev/Building-Tracker-FE), and the backend API is hosted on [heroku](https://building-tracker-api.herokuapp.com/).
 
 **Technologies Used**
 
@@ -28,7 +28,7 @@ Front-end:
 <li>jQuery</li>
 <li>AJAX</li>
 <li>Git/GitHub</li>
-
+<br>
 Back-end:
 <li>Ruby</li>
 <li>Ruby on Rails</li>
