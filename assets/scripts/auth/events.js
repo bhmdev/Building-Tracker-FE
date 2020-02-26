@@ -41,18 +41,30 @@ const onCreateBuilding = function (event) {
 }
 const onUpdateBuilding = function (event) {
   event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
+  // const form = event.target
+  const data = getFormFields(event.target)
   api.updateBuilding(data)
     .then(ui.onUpdateBuildingSuccess)
     .catch(ui.onUpdateBuildingFailure)
 }
 
-const viewBuilding = function (event) {
+const onViewBuilding = function (event) {
   event.preventDefault()
-  api.buildingsIndex()
+  api.viewBuilding()
     .then(ui.onViewBuildingsSuccess)
     .catch(ui.onViewBuildingsFailure)
+}
+const onDelete = function (event) {
+  event.preventDefault()
+  console.log(getFormFields(this).id)
+  const data = getFormFields(this).building.id
+  api.deleteBuilding(data)
+    .then(ui.onDeleteBuildingSuccess)
+    .catch(ui.onDeleteBuildingFailure)
+}
+const onClearBuildings = (event) => {
+  event.preventDefault()
+  ui.clearBuildings()
 }
 
 module.exports = {
@@ -62,5 +74,7 @@ module.exports = {
   onSignOut,
   onCreateBuilding,
   onUpdateBuilding,
-  viewBuilding
+  onViewBuilding,
+  onDelete,
+  onClearBuildings
 }

@@ -66,6 +66,7 @@
             <br>
 
             <!-- <input type="text"  name="building[id]" placeholder="Building Name"/> -->
+            <input type="text" name="building[id]" placeholder="ID"/>
             <input type="text" name="building[address]" placeholder="Address/Location"/>
             <input type="number" name="building[price]" placeholder="Building Price"/>
             <label>Built Date:</label>
@@ -90,8 +91,24 @@
           <form id="view-buildings">
             <input type="submit" value="View Buildings"/>
           </form>
-        <!-- </div> -->
-      <!-- </aside> -->
+
+
+            <form id="deleteBuilding">
+                <!-- <fieldset> -->
+              <legend>Delete Building</legend>
+              <input class="inputField" placeholder="ID" type="text" name=building[id]>
+              <input type="submit" value="Delete">
+            <!-- </fieldset> -->
+          </form>
+
+          <button id="clearBuildings" class="btn btn-primary">Destroy all buildings</button>
+
+            <!-- <form id="deleteBuilding">
+
+              <button>Delete</button>
+            </form> -->
+          <!-- </div> -->
+        <!-- </aside> -->
 
     </body>
 </html>

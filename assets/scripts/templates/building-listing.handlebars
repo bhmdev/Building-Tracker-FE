@@ -1,22 +1,26 @@
-{{#each buildings as |building|}}
-  {{log building}}
-  <section data-id="{{building.id}}">
-    <h3>
-      {{building.id}}: {{building.name}}
-    </h3>
-    <p>
-      {{#if building.address}}
-        {{building.address}}
-      {{else}}
-        No address provided
-      {{/if}}
-    </p>
-    <p>
-      {{#if building.price}}
-        {{building.price}}
-      {{else}}
-        No price provided
-      {{/if}}
-    </p>
-  </section>
-  {{/each}}
+  {{#each buildings as |building|}}
+    <section data-id="{{building.id}}">
+        <h6>Building ID:</h6>
+        <p>
+        {{#if building.id}}
+        {{building.id}}
+        {{/if}}
+      </p>
+      <h6>Building Name:</h6>
+      <p>
+         {{#if building.name}}
+         {{building.name}}
+         {{/if}}
+       </p>
+      <p>
+        {{#if building.address}}
+          {{building.address}}
+        {{/if}}
+      </p>
+      <p>
+        {{#if building.price}}
+          {{building.price}}
+        {{/if}}
+      </p>
+    </section>
+    {{/each}}

@@ -74,7 +74,7 @@ const onCreateBuildingSuccess = function (response) {
   $('#message').addClass('success-message')
 }
 const onUpdateBuildingSuccess = function (response) {
-  $('#message').text(response.user.email + ' successfully updated a building ')
+  $('#message').text("you've successfully updated a building ")
   $('#buildingCreateForm').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
@@ -92,11 +92,23 @@ const onViewBuildingsFailure = function (response) {
 }
 
 const onViewBuildingsSuccess = function (response) {
+  $('#buildingDisplay').show()
   $('#message').text('Building failed')
   $('#message').show()
-  console.log(response)
   const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
+  $('#buildingDisplay').html('')
   $('#buildingDisplay').append(showBuildingsHTML)
+}
+const onDeleteSuccess = function (response) {
+  $('#message').text('Building Deleted')
+  $('#message').show()
+  const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
+  $('#buildingDisplay').html('')
+  $('#buildingDisplay').append(showBuildingsHTML)
+  $('#buildingDisplay').empty()
+}
+const clearBuildings = () => {
+  $('#buildingDisplay').empty()
 }
 
 module.exports = {
@@ -112,5 +124,7 @@ module.exports = {
   onUpdateBuildingSuccess,
   onUpdateBuildingFailure,
   onViewBuildingsFailure,
-  onViewBuildingsSuccess
+  onViewBuildingsSuccess,
+  onDeleteSuccess,
+  clearBuildings
 }

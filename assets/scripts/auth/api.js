@@ -51,7 +51,7 @@ const createBuilding = function (data) {
 
 const updateBuilding = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/buildings/',
+    url: config.apiUrl + '/buildings/' + data.building.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -60,10 +60,20 @@ const updateBuilding = function (data) {
   })
 }
 
-const buildingsIndex = function () {
+const viewBuilding = function () {
   return $.ajax({
     url: config.apiUrl + '/buildings/',
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteBuilding = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/buildings/' + data,
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -77,5 +87,6 @@ module.exports = {
   signOut,
   createBuilding,
   updateBuilding,
-  buildingsIndex
+  viewBuilding,
+  deleteBuilding
 }
