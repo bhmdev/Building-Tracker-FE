@@ -1,4 +1,4 @@
-<h4>**Building Tracker README: Front End**</h4>
+<h3>Building Tracker README: Front End</h3>
 
 
 Important Links:
