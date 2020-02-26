@@ -6,20 +6,22 @@
         {{building.id}}
         {{/if}}
       </p>
-      <h6>Building Name:</h6>
+      <h6>Building Address:</h6>
       <p>
-         {{#if building.name}}
-         {{building.name}}
+         {{#if building.address}}
+         {{building.address}}
          {{/if}}
        </p>
-      <p>
-        {{#if building.address}}
-          {{building.address}}
-        {{/if}}
-      </p>
+       <h6>Building Price:</h6>
       <p>
         {{#if building.price}}
           {{building.price}}
+        {{/if}}
+      </p>
+      <h6>Square Footage of Building:</h6>
+      <p>
+        {{#if building.sq_feet}}
+          {{building.sq_feet}}
         {{/if}}
       </p>
     </section>

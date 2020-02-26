@@ -28,6 +28,7 @@ const onSignInSuccess = function (response) {
   $('#message').show()
   $('#buildingCreateForm').show()
   $('#buildingUpdateForm').show()
+  $('#clearBuildings').hide()
 }
 
 const onSignInFailure = function (response) {
@@ -64,6 +65,7 @@ const onSignOutSuccess = function (response) {
   $('#changePassword').trigger('reset')
   $('#buildingCreateForm').hide()
   $('#buildingUpdateForm').hide()
+  $('#clearBuildings').hide()
   store.user = null
 }
 
@@ -72,10 +74,18 @@ const onCreateBuildingSuccess = function (response) {
   $('#buildingCreateForm').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
+  $('#view-buildings').show()
 }
+
+const onCreateBuildingFailure = function (response) {
+  $('#message').text('You cannot create a building without filling in all forms')
+  $('#buildingUpdateForm').trigger('reset')
+  $('#message').show()
+}
+
 const onUpdateBuildingSuccess = function (response) {
   $('#message').text("you've successfully updated a building ")
-  $('#buildingCreateForm').trigger('reset')
+  $('#buildingUpdateForm').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
 }
@@ -93,15 +103,17 @@ const onViewBuildingsFailure = function (response) {
 
 const onViewBuildingsSuccess = function (response) {
   $('#buildingDisplay').show()
-  $('#message').text('Building failed')
+  $('#message').text('Here is an inventory of your buildings')
   $('#message').show()
+  $('#deleteBuilding').show()
   const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
   $('#buildingDisplay').html('')
   $('#buildingDisplay').append(showBuildingsHTML)
 }
-const onDeleteSuccess = function (response) {
-  $('#message').text('Building Deleted')
+const onDeleteBuildingSuccess = function (response) {
   $('#message').show()
+  $('#message').text('Building Deleted')
+  $('#deleteBuilding').trigger('reset')
   const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
   $('#buildingDisplay').html('')
   $('#buildingDisplay').append(showBuildingsHTML)
@@ -121,10 +133,11 @@ module.exports = {
   onChangePasswordFailure,
   onChangePasswordSuccess,
   onCreateBuildingSuccess,
+  onCreateBuildingFailure,
   onUpdateBuildingSuccess,
   onUpdateBuildingFailure,
   onViewBuildingsFailure,
   onViewBuildingsSuccess,
-  onDeleteSuccess,
+  onDeleteBuildingSuccess,
   clearBuildings
 }

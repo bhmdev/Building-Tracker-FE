@@ -56,7 +56,6 @@ const onViewBuilding = function (event) {
 }
 const onDelete = function (event) {
   event.preventDefault()
-  console.log(getFormFields(this).id)
   const data = getFormFields(this).building.id
   api.deleteBuilding(data)
     .then(ui.onDeleteBuildingSuccess)

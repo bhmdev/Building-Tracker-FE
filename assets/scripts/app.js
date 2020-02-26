@@ -22,4 +22,7 @@ $(() => {
   $('#deleteBuilding').on('submit', authEvents.onDelete)
   $('#clearBuildings').on('click', authEvents.onClearBuildings)
   $('#buildingUpdateForm').on('submit', authEvents.onUpdateBuilding)
+  $('#clearBuildings').hide()
+  $('#deleteBuilding').hide()
+  $('#view-buildings').hide()
 })
