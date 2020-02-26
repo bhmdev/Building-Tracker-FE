@@ -1,4 +1,6 @@
 const store = require('./../store')
+// const events = require('./events')
+const api = require('./api')
 const showBuildingsTemplate = require('../templates/building-listing.handlebars')
 
 const onSignUpSuccess = function (response) {
@@ -66,6 +68,7 @@ const onSignOutSuccess = function (response) {
   $('#buildingCreateForm').hide()
   $('#buildingUpdateForm').hide()
   $('#clearBuildings').hide()
+  $('#deleteBuilding').hide()
   store.user = null
 }
 
@@ -76,6 +79,9 @@ const onCreateBuildingSuccess = function (response) {
   $('#message').addClass('success-message')
   $('#view-buildings').show()
   $('#buildingUpdateForm').show()
+  api.viewBuilding()
+    .then(onViewBuildingsSuccess)
+    .catch(onViewBuildingsFailure)
 }
 
 const onCreateBuildingFailure = function (response) {
@@ -89,9 +95,12 @@ const onUpdateBuildingSuccess = function (response) {
   $('#buildingUpdateForm').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
+  api.viewBuilding()
+    .then(onViewBuildingsSuccess)
+    .catch(onViewBuildingsFailure)
 }
 const onUpdateBuildingFailure = function (response) {
-  $('#message').text('Building failed')
+  $('#message').text('Update Building failed')
   $('#buildingUpdateForm').trigger('reset')
   $('#message').show()
 }
@@ -107,21 +116,35 @@ const onViewBuildingsSuccess = function (response) {
   $('#message').text('Here is an inventory of your buildings')
   $('#message').show()
   $('#deleteBuilding').show()
+  $('#clearBuildings').show()
   const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
   $('#buildingDisplay').html('')
   $('#buildingDisplay').append(showBuildingsHTML)
 }
-const onDeleteBuildingSuccess = function (response) {
+const onDeleteBuildingSuccess = function () {
   $('#message').show()
   $('#message').text('Building Deleted')
   $('#deleteBuilding').trigger('reset')
-  const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
-  $('#buildingDisplay').html('')
-  $('#buildingDisplay').append(showBuildingsHTML)
-  $('#buildingDisplay').empty()
+  // events.onViewBuilding()
+  api.viewBuilding()
+    .then(onViewBuildingsSuccess)
+    .catch(onViewBuildingsFailure)
+  // $('#deleteBuilding').trigger('reset')
+  // const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
+  // $('#buildingDisplay').html('')
+  // $('#buildingDisplay').append(showBuildingsHTML)
+  // $('#buildingDisplay').empty()
 }
+
+const onDeleteBuildingFailure = function (response) {
+  $('#message').text('Failed to destroy a building')
+  $('#deleteBuilding').trigger('reset')
+  $('#message').show()
+}
+
 const clearBuildings = () => {
   $('#buildingDisplay').empty()
+  $('#message').text('You have cleared your inventory')
 }
 
 module.exports = {
@@ -140,5 +163,6 @@ module.exports = {
   onViewBuildingsFailure,
   onViewBuildingsSuccess,
   onDeleteBuildingSuccess,
+  onDeleteBuildingFailure,
   clearBuildings
 }

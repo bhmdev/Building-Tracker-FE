@@ -54,6 +54,7 @@ const onViewBuilding = function (event) {
     .then(ui.onViewBuildingsSuccess)
     .catch(ui.onViewBuildingsFailure)
 }
+
 const onDelete = function (event) {
   event.preventDefault()
   const data = getFormFields(this).building.id
