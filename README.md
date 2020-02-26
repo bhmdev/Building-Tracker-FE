@@ -14,7 +14,7 @@ This application is designed to track potential investment opportunities for com
 
 It's broken down by building Address/Location, Cost, Sq Footage, and Date built.
 
-The front end is hosted on [github pages](https://github.com/bhmdev/Building-Tracker-FE), and the backend API is hosted on [heroku](https://building-tracker-api.herokuapp.com/).
+The front end is hosted on [github pages](https://bhmdev.github.io/Building-Tracker-FE/), and the backend API is hosted on [heroku](https://building-tracker-api.herokuapp.com/).
 
 **Technologies Used**
 
