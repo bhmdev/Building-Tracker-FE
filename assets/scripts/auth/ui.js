@@ -9,6 +9,7 @@ const onSignUpSuccess = function (response) {
   $('#message').show()
   $('#message').addClass('success-message')
   $('#signUp').hide()
+  $('#signIn').trigger('reset')
 }
 
 const onSignUpFailure = function (response) {
@@ -31,6 +32,7 @@ const onSignInSuccess = function (response) {
   $('#buildingCreateForm').show()
   $('#buildingUpdateForm').hide()
   $('#clearBuildings').hide()
+  $('#buildingCreateForm').trigger('reset')
 }
 
 const onSignInFailure = function (response) {
@@ -69,6 +71,8 @@ const onSignOutSuccess = function (response) {
   $('#buildingUpdateForm').hide()
   $('#clearBuildings').hide()
   $('#deleteBuilding').hide()
+  $('#buildingDisplay').html('')
+  $('#view-buildings').hide()
   store.user = null
 }
 
@@ -77,8 +81,9 @@ const onCreateBuildingSuccess = function (response) {
   $('#buildingCreateForm').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
-  $('#view-buildings').show()
-  $('#buildingUpdateForm').show()
+  $('#buildingDisplay').html('')
+  // $('#view-buildings').show()
+  // $('#buildingUpdateForm').show()
   api.viewBuilding()
     .then(onViewBuildingsSuccess)
     .catch(onViewBuildingsFailure)
@@ -95,6 +100,7 @@ const onUpdateBuildingSuccess = function (response) {
   $('#buildingUpdateForm').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
+  $('#buildingDisplay').hide()
   api.viewBuilding()
     .then(onViewBuildingsSuccess)
     .catch(onViewBuildingsFailure)
@@ -145,6 +151,7 @@ const onDeleteBuildingFailure = function (response) {
 const clearBuildings = () => {
   $('#buildingDisplay').empty()
   $('#message').text('You have cleared your inventory')
+  $('#view-buildings').show()
 }
 
 module.exports = {
