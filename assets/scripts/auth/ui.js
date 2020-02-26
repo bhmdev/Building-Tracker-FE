@@ -8,7 +8,7 @@ const onSignUpSuccess = function (response) {
   $('#signUp').trigger('reset')
   $('#message').show()
   $('#message').addClass('success-message')
-  $('#signUp').hide()
+  $('#signUp').show()
   $('#signIn').trigger('reset')
 }
 
@@ -33,6 +33,7 @@ const onSignInSuccess = function (response) {
   $('#buildingUpdateForm').hide()
   $('#clearBuildings').hide()
   $('#buildingDisplay').hide()
+  $('#view-buildings').show()
 }
 
 const onSignInFailure = function (response) {
