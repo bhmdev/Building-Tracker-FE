@@ -27,6 +27,7 @@ Front-end:
 <li>jQuery</li>
 <li>AJAX</li>
 <li>Git/GitHub</li>
+<li>Handlebars</li>
 <br>
 Back-end:
 <li>Ruby</li>
