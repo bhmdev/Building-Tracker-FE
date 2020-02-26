@@ -2,8 +2,8 @@ Building Tracker README: Front End
 
 
 Important Links:
-
 [Deployed Client](https://bhmdev.github.io/Building-Tracker-FE/)
+<br>
 [Deployed API](https://github.com/bhmdev/Building-Tracker-FE)
 
 
@@ -11,14 +11,13 @@ Important Links:
 
 This application is designed to track potential investment opportunities for commercial real estate investors.
 
-It's broken down by building Address/Location, cost, Sq Footage, and date built.
+It's broken down by building Address/Location, Cost, Sq Footage, and Date built.
 
 The front end is hosted on [github pages](https://github.com/bhmdev/Building-Tracker-FE), and the backend API is hosted on [heroku](https://building-tracker-api.herokuapp.com/).
 
 **Technologies Used**
 
 <ol>
-
 Front-end:
 <li>HTML5</li>
 <li>CSS3</li>
@@ -68,7 +67,7 @@ Events for the submit actions were created and linked to the API calls
 - Having a small messaging issue - but will fix.
 - SCSS would be the next thing I need to work on
 - In the future I'd love to make the user be able to search for a building via a search bar using the parameters of: Building Address/Location, Sq Ft, Built Date, and Price
-- I'd also love to have an option to set a particular building with a class i.e.: Mixed Use, Retail, Office, Industrial etc.
+- I'd also love to have an option to set a particular building with a class i.e. Mixed Use, Retail, Office, Industrial etc.
 
 **Author**
 
