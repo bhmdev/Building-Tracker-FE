@@ -33,7 +33,7 @@ const onSignInSuccess = function (response) {
   $('#buildingUpdateForm').hide()
   $('#clearBuildings').hide()
   $('#buildingDisplay').hide()
-  $('#view-buildings').show()
+  $('#view-buildings').hide()
 }
 
 const onSignInFailure = function (response) {
