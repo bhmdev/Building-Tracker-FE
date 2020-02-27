@@ -30,11 +30,6 @@ Front-end:
 <li>AJAX</li>
 <li>Git/GitHub</li>
 <li>Handlebars</li>
-<br>
-Back-end:
-<li>Ruby</li>
-<li>Ruby on Rails</li>
-<li>Posgres</li>
 </ol>
 
 **Wire Frames**
