@@ -12,10 +12,6 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <main id="buildingDisplay">
-
-
-      </main>
 
       <!-- <aside id="adminPanel"> -->
         <!-- <div class="wrapper"> -->
@@ -24,7 +20,24 @@
           </header>
 
           <p id="message"></p>
+        <div class="container">
+          <div class="row">
 
+            <a id="signUpToggleBtn"></a>
+           <div class="col-12 col-lg-6 signBoxes">
+           <form id="signUp">
+             <h4>Sign Up</h4>
+             <input type="text" name="credentials[email]" placeholder="email"/>
+             <br>
+             <input type="password" name="credentials[password]" placeholder="password"/>
+             <br>
+             <input type="password" name="credentials[password_confirmation]" placeholder="confirm password"/>
+             <br>
+             <button type="submit">Sign Up</button>
+           </form>
+         </div>
+
+            <div class="col-12 col-lg-6 signBoxes">
           <form id="signIn">
           <h4>Sign In</h4>
             <input type="text" name="credentials[email]" placeholder="email"/>
@@ -33,21 +46,13 @@
             <br>
             <button type="submit">Sign In</button>
           </form>
+        </div>
+      </div>
+    </div>
             <br>
             <br>
            <!-- <div id="uiFeedbackDisplay"> </div>
            <a id="signUpToggleBtn"></a> -->
-
-          <form id="signUp">
-            <h4>Sign Up</h4>
-            <input type="text" name="credentials[email]" placeholder="email"/>
-            <br>
-            <input type="password" name="credentials[password]" placeholder="password"/>
-            <br>
-            <input type="password" name="credentials[password_confirmation]" placeholder="confirm password"/>
-            <br>
-            <button type="submit">Sign Up</button>
-          </form>
 
           <form id="signOut">
             <button>Sign Out</button>
@@ -88,6 +93,9 @@
             <input type="number" name="building[sq_feet]" placeholder="Sq Ft"/>
             <button type="submit">Create</button>
           </form>
+
+          <main id="buildingDisplay"></main>
+
           <form id="view-buildings">
             <input type="submit" value="View Buildings"/>
           </form>
