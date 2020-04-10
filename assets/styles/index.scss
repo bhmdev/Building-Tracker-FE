@@ -4,14 +4,22 @@
   display: flex;
   justify-content: center;
   padding: 80px 120px;
-  background-color: #fafafa;
+  background-color: grey;
   box-shadow: 7px 7px 7px lightgrey;
   height: 400px;
   width: 100px;
 }
 
+#message {
+  color: white;
+}
+
+body {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+
 nav {
-  background-color: grey;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
   margin: auto;
   position: fixed;
   height: 60px;
@@ -63,6 +71,7 @@ nav {
   padding: 10px;
   margin-bottom: 20px;
   box-shadow: 7px 7px 7px lightgrey;
+  background-color: white;
 }
 
 #clearBuildings {
