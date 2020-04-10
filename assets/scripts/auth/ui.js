@@ -30,11 +30,10 @@ const onSignInSuccess = function (response) {
   $('#signUp').hide()
   $('#message').show()
   $('#buildingCreateForm').show()
-  $('#buildingUpdateForm').hide()
+  $('#buildingUpdateForm').show()
   $('#clearBuildings').hide()
   $('#buildingDisplay').hide()
   $('#view-buildings').show()
-  $('#navBar').addClass('navBar')
 }
 
 const onSignInFailure = function (response) {
@@ -78,8 +77,6 @@ const onSignOutSuccess = function (response) {
   $('#buildingCreateForm').trigger('reset')
   $('#buildingUpdateForm').trigger('reset')
   $('#deleteBuilding').trigger('reset')
-  $('#navBar').removeClass('navBar')
-  $('#navBar').addClass('navBarSignOut')
   store.user = null
 }
 
@@ -144,6 +141,7 @@ const onViewBuildingsSuccess = function (response) {
   $('#buildingDisplay').html('')
   const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
   $('#buildingDisplay').append(showBuildingsHTML)
+  $('#buildingCreateForm').hide()
 }
 const onDeleteBuildingSuccess = function () {
   $('#message').show()
@@ -151,9 +149,9 @@ const onDeleteBuildingSuccess = function () {
   $('#deleteBuilding').trigger('reset')
   $('#changePassword').trigger('reset')
   // events.onViewBuilding()
-  api.viewBuilding()
-    .then(onViewBuildingsSuccess)
-    .catch(onViewBuildingsFailure)
+  // api.viewBuilding()
+  //   .then(onViewBuildingsSuccess)
+  //   .catch(onViewBuildingsFailure)
   // $('#deleteBuilding').trigger('reset')
   // const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
   // $('#buildingDisplay').html('')
@@ -173,6 +171,7 @@ const clearBuildings = () => {
   $('#buildingDisplay').empty()
   $('#message').text('You have cleared your inventory')
   $('#changePassword').trigger('reset')
+  $('#buildingCreateForm').show()
 }
 
 module.exports = {

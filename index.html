@@ -27,12 +27,15 @@
           </form>
         </nav>
 
-          <p id="message"></p>
         <div class="container">
           <div class="row">
-
+            <div class="col-12 blank"><p id="message"></p>
+            <form id="view-buildings">
+              <input type="submit" value="View Buildings"/>
+              <button id="clearBuildings" type="submit">Add Building</button>
+            </form></div>
             <a id="signUpToggleBtn"></a>
-           <div class="col-12 col-lg-5 signBoxes">
+           <div class="col-12 col-lg-5 signBoxes overflow-auto">
            <form id="signUp">
              <h4>Sign Up</h4>
              <input class="space" type="text" name="credentials[email]" placeholder="email"/>
@@ -43,6 +46,22 @@
              <br>
              <button class="space" type="submit">Sign Up</button>
            </form>
+           <!-- user create a building -->
+           <form id="buildingCreateForm">
+             <br/>
+             <h4><label> Add a new building</label></h4>
+             <!-- <input type="text"  name="building[id]" placeholder="Building Name"/> -->
+             <input type="text" name="building[address]" placeholder="Address/Location"/>
+             <input type="number" name="building[price]" placeholder="Building Price"/>
+             <label>Built Date:</label>
+             <input type="date" name="building[built_date]" placeholder="Built Date" />
+             <input type="number" name="building[sq_feet]" placeholder="Sq Ft"/>
+             <button type="submit">Create</button>
+           </form>
+
+           <main id="buildingDisplay" class="content"></main>
+
+
          </div>
 
          <div class="col-0 col-lg-2"></div>
@@ -57,18 +76,9 @@
             <br>
             <button class="space" type="submit">Sign In</button>
           </form>
-        </div>
-      </div>
-    </div>
-            <br>
-            <br>
-
           <!-- user updates a building -->
           <form id="buildingUpdateForm">
-            <hr/>
             <h4>Edit Building Info</h4>
-            <br>
-
             <!-- <input type="text"  name="building[id]" placeholder="Building Name"/> -->
             <input type="text" name="building[id]" placeholder="ID"/>
             <input type="text" name="building[address]" placeholder="Address/Location"/>
@@ -78,38 +88,19 @@
             <input type="number" name="building[sq_feet]" placeholder="Sq Ft"/>
             <button type="submit">Update</button>
           </form>
-          <!-- user create a building -->
-
-          <form id="buildingCreateForm">
-            <br/>
-            <h4><label> Add a new building</label></h4>
-            <br>
-            <!-- <input type="text"  name="building[id]" placeholder="Building Name"/> -->
-            <input type="text" name="building[address]" placeholder="Address/Location"/>
-            <input type="number" name="building[price]" placeholder="Building Price"/>
-            <label>Built Date:</label>
-            <input type="date" name="building[built_date]" placeholder="Built Date" />
-            <input type="number" name="building[sq_feet]" placeholder="Sq Ft"/>
-            <button type="submit">Create</button>
-          </form>
-
-          <main id="buildingDisplay"></main>
-
-          <form id="view-buildings">
-            <input type="submit" value="View Buildings"/>
-          </form>
-
-
+        </div>
+      </div>
+    </div>
+<!--
             <form id="deleteBuilding">
-                <!-- <fieldset> -->
-              <legend>Delete Building</legend>
+                <fieldset>
+              <! <legend>Delete Building</legend>
               <input class="inputField" placeholder="ID" type="text" name=building[id]>
-              <input type="submit" value="Delete">
+              <input type="submit" value="Delete"> -->
             <!-- </fieldset> -->
-          </form>
-            <br>
-            <br>
-          <button id="clearBuildings" class="btn btn-primary">Clear your inventory</button>
+          <!-- </form> -->
+            <!-- <br>
+            <br> -->
 
             <!-- <form id="deleteBuilding">
               <button>Delete</button>

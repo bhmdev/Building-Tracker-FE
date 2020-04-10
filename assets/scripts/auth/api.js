@@ -70,9 +70,10 @@ const viewBuilding = function () {
   })
 }
 
-const deleteBuilding = function (data) {
+const deleteBuilding = function (event) {
+  const id = $(event.target).data('id')
   return $.ajax({
-    url: config.apiUrl + '/buildings/' + data,
+    url: config.apiUrl + '/buildings/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

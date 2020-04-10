@@ -2,6 +2,10 @@ const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
+const handlers = () => {
+  $('.content').on('click', '.remove-building', onDelete)
+}
+
 const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
@@ -37,6 +41,9 @@ const onCreateBuilding = function (event) {
   const data = getFormFields(form)
   api.createBuilding(data)
     .then(ui.onCreateBuildingSuccess)
+    .then(function () {
+      onViewBuilding(event)
+    })
     .catch(ui.onCreateBuildingFailure)
 }
 const onUpdateBuilding = function (event) {
@@ -55,11 +62,14 @@ const onViewBuilding = function (event) {
     .catch(ui.onViewBuildingsFailure)
 }
 
-const onDelete = function (event) {
+const onDelete = (event) => {
   event.preventDefault()
-  const data = getFormFields(this).building.id
-  api.deleteBuilding(data)
+  // const data = getFormFields(this).building.id
+  api.deleteBuilding(event)
     .then(ui.onDeleteBuildingSuccess)
+    .then(function () {
+      onViewBuilding(event)
+    })
     .catch(ui.onDeleteBuildingFailure)
 }
 const onClearBuildings = (event) => {
@@ -76,5 +86,6 @@ module.exports = {
   onUpdateBuilding,
   onViewBuilding,
   onDelete,
-  onClearBuildings
+  onClearBuildings,
+  handlers
 }

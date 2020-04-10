@@ -3,10 +3,11 @@
 .signBoxes {
   display: flex;
   justify-content: center;
-  padding: 100px 120px;
-  margin-top: 130px;
+  padding: 80px 120px;
   background-color: #fafafa;
   box-shadow: 7px 7px 7px lightgrey;
+  height: 400px;
+  width: 100px;
 }
 
 nav {
@@ -17,14 +18,8 @@ nav {
   width: 100%;
   color: white;
   margin-top: -16px;
-}
-
-.navBar {
-  margin-top: 0;
-}
-
-.navBarSignOut {
-  margin-top: -16px;
+  overflow: hidden;
+  z-index: 300;
 }
 
 #header {
@@ -39,6 +34,37 @@ nav {
 
 #signOut {
   float: right;
-  margin-top: -80px;
+  margin-top: -50px;
   margin-right: 52px;
+}
+
+#changePassword {
+  float: right;
+  margin-top: -50px;
+  margin-right: 150px;
+}
+
+#buildingDisplay {
+  display: inline-block;
+}
+
+#view-buildings {
+  padding-left: -40px;
+
+}
+
+.blank {
+  padding-top: 150px;
+  padding-bottom: 20px;
+}
+
+.boxStyle {
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 7px 7px 7px lightgrey;
+}
+
+#clearBuildings {
+  margin-left: 220px;
 }
