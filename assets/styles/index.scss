@@ -3,5 +3,26 @@
 .signBoxes {
   display: flex;
   justify-content: center;
-  padding: 80px;
+  padding: 100px 120px;
+  margin-top: 130px;
+  background-color: #fafafa;
+  box-shadow: 7px 7px 7px lightgrey;
+}
+
+nav {
+  background-color: grey;
+  margin: auto;
+  margin-top: -16px;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  color: white;
+}
+
+header {
+  padding-left: 40px;
+}
+
+.space {
+  margin-bottom: 5px;
 }

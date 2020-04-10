@@ -15,36 +15,41 @@
 
       <!-- <aside id="adminPanel"> -->
         <!-- <div class="wrapper"> -->
+        <nav>
           <header>
             <h1>Building Tracker</h1>
           </header>
+        </nav>
 
           <p id="message"></p>
         <div class="container">
           <div class="row">
 
             <a id="signUpToggleBtn"></a>
-           <div class="col-12 col-lg-6 signBoxes">
+           <div class="col-12 col-lg-5 signBoxes">
            <form id="signUp">
              <h4>Sign Up</h4>
-             <input type="text" name="credentials[email]" placeholder="email"/>
+             <input class="space" type="text" name="credentials[email]" placeholder="email"/>
              <br>
-             <input type="password" name="credentials[password]" placeholder="password"/>
+             <input class="space" type="password" name="credentials[password]" placeholder="password"/>
              <br>
-             <input type="password" name="credentials[password_confirmation]" placeholder="confirm password"/>
+             <input class="space" type="password" name="credentials[password_confirmation]" placeholder="confirm password"/>
              <br>
-             <button type="submit">Sign Up</button>
+             <button class="space" type="submit">Sign Up</button>
            </form>
          </div>
 
-            <div class="col-12 col-lg-6 signBoxes">
+         <div class="col-0 col-lg-2"></div>
+
+
+            <div class="col-12 col-lg-5 signBoxes">
           <form id="signIn">
           <h4>Sign In</h4>
-            <input type="text" name="credentials[email]" placeholder="email"/>
+            <input class="space" type="text" name="credentials[email]" placeholder="email"/>
             <br>
-            <input type="password" name="credentials[password]" placeholder="password"/>
+            <input class="space" type="password" name="credentials[password]" placeholder="password"/>
             <br>
-            <button type="submit">Sign In</button>
+            <button class="space" type="submit">Sign In</button>
           </form>
         </div>
       </div>
