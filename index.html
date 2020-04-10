@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Building Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+      <!-- <aside id="adminPanel"> -->
+        <!-- <div class="wrapper"> -->
+        <nav id="navBar">
+            <h1 id="header">Building Tracker</h1>
+            <form id="changePassword">
+              <input type="password" name="passwords[old]" placeholder="old password"/>
+              <input type="password" name="passwords[new]" placeholder="new password"/>
+              <button> Change Password</button>
+            </form>
+          <form id="signOut">
+            <button>Sign Out</button>
+          </form>
+        </nav>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 blank"><p id="message"></p>
+            <form id="view-buildings">
+              <input type="submit" value="View Buildings"/>
+              <button id="clearBuildings" type="submit">Add Building</button>
+            </form></div>
+            <a id="signUpToggleBtn"></a>
+           <div class="col-12 col-lg-5 signBoxes overflow-auto">
+           <form id="signUp">
+             <h4>Sign Up</h4>
+             <input class="space" type="text" name="credentials[email]" placeholder="email"/>
+             <br>
+             <input class="space" type="password" name="credentials[password]" placeholder="password"/>
+             <br>
+             <input class="space" type="password" name="credentials[password_confirmation]" placeholder="confirm password"/>
+             <br>
+             <button class="space" type="submit">Sign Up</button>
+           </form>
+           <!-- user create a building -->
+           <form id="buildingCreateForm">
+             <br/>
+             <h4><label> Add a new building</label></h4>
+             <!-- <input type="text"  name="building[id]" placeholder="Building Name"/> -->
+             <input type="text" name="building[address]" placeholder="Address/Location"/>
+             <input type="number" name="building[price]" placeholder="Building Price"/>
+             <label>Built Date:</label>
+             <input type="date" name="building[built_date]" placeholder="Built Date" />
+             <input type="number" name="building[sq_feet]" placeholder="Sq Ft"/>
+             <button type="submit">Create</button>
+           </form>
+
+           <main id="buildingDisplay" class="content"></main>
+         </div>
+
+         <div class="col-0 col-lg-2"></div>
+
+            <div class="col-12 col-lg-5 signBoxes">
+          <form id="signIn">
+          <h4>Sign In</h4>
+            <input class="space" type="text" name="credentials[email]" placeholder="email"/>
+            <br>
+            <input class="space" type="password" name="credentials[password]" placeholder="password"/>
+            <br>
+            <button class="space" type="submit">Sign In</button>
+          </form>
+          <!-- user updates a building -->
+          <form id="buildingUpdateForm">
+            <h4>Edit Building Info</h4>
+            <!-- <input type="text"  name="building[id]" placeholder="Building Name"/> -->
+            <input type="text" name="building[id]" placeholder="ID"/>
+            <input type="text" name="building[address]" placeholder="Address/Location"/>
+            <input type="number" name="building[price]" placeholder="Building Price"/>
+            <label>Built Date:</label>
+            <input type="date" name="building[built_date]" placeholder="Built Date" />
+            <input type="number" name="building[sq_feet]" placeholder="Sq Ft"/>
+            <button type="submit">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </body>
+</html>
