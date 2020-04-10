@@ -34,6 +34,7 @@ const onSignInSuccess = function (response) {
   $('#clearBuildings').hide()
   $('#buildingDisplay').hide()
   $('#view-buildings').show()
+  $('#navBar').addClass('navBar')
 }
 
 const onSignInFailure = function (response) {
@@ -77,6 +78,8 @@ const onSignOutSuccess = function (response) {
   $('#buildingCreateForm').trigger('reset')
   $('#buildingUpdateForm').trigger('reset')
   $('#deleteBuilding').trigger('reset')
+  $('#navBar').removeClass('navBar')
+  $('#navBar').addClass('navBarSignOut')
   store.user = null
 }
 

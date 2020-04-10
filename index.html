@@ -15,10 +15,16 @@
 
       <!-- <aside id="adminPanel"> -->
         <!-- <div class="wrapper"> -->
-        <nav>
-          <header>
-            <h1>Building Tracker</h1>
-          </header>
+        <nav id="navBar">
+            <h1 id="header">Building Tracker</h1>
+            <form id="changePassword">
+              <input type="password" name="passwords[old]" placeholder="old password"/>
+              <input type="password" name="passwords[new]" placeholder="new password"/>
+              <button> Change Password</button>
+            </form>
+          <form id="signOut">
+            <button>Sign Out</button>
+          </form>
         </nav>
 
           <p id="message"></p>
@@ -56,20 +62,8 @@
     </div>
             <br>
             <br>
-           <!-- <div id="uiFeedbackDisplay"> </div>
-           <a id="signUpToggleBtn"></a> -->
 
-          <form id="signOut">
-            <button>Sign Out</button>
-          </form>
-
-          <form id="changePassword">
-            <input type="password" name="passwords[old]" placeholder="old password"/>
-            <input type="password" name="passwords[new]" placeholder="new password"/>
-            <button> Change Password</button>
-          </form>
           <!-- user updates a building -->
-
           <form id="buildingUpdateForm">
             <hr/>
             <h4>Edit Building Info</h4>

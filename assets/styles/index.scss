@@ -12,17 +12,33 @@
 nav {
   background-color: grey;
   margin: auto;
-  margin-top: -16px;
   position: fixed;
-  height: 50px;
+  height: 60px;
   width: 100%;
   color: white;
+  margin-top: -16px;
 }
 
-header {
+.navBar {
+  margin-top: 0;
+}
+
+.navBarSignOut {
+  margin-top: -16px;
+}
+
+#header {
   padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .space {
   margin-bottom: 5px;
+}
+
+#signOut {
+  float: right;
+  margin-top: -80px;
+  margin-right: 52px;
 }
