@@ -91,9 +91,6 @@ const onCreateBuildingSuccess = function (response) {
   $('#view-buildings').show()
   $('#changePassword').trigger('reset')
   $('#buildingUpdateForm').trigger('reset')
-  // api.viewBuilding()
-  //   .then(onViewBuildingsSuccess)
-  //   .catch(onViewBuildingsFailure)
 }
 
 const onCreateBuildingFailure = function (response) {
@@ -132,7 +129,6 @@ const onViewBuildingsFailure = function (response) {
 
 const onViewBuildingsSuccess = function (response) {
   $('#buildingDisplay').show()
-  $('#message').text('Here is an inventory of your buildings')
   $('#message').show()
   $('#deleteBuilding').show()
   $('#clearBuildings').show()
@@ -148,15 +144,6 @@ const onDeleteBuildingSuccess = function () {
   $('#message').text('Building Deleted')
   $('#deleteBuilding').trigger('reset')
   $('#changePassword').trigger('reset')
-  // events.onViewBuilding()
-  // api.viewBuilding()
-  //   .then(onViewBuildingsSuccess)
-  //   .catch(onViewBuildingsFailure)
-  // $('#deleteBuilding').trigger('reset')
-  // const showBuildingsHTML = showBuildingsTemplate({buildings: response.buildings})
-  // $('#buildingDisplay').html('')
-  // $('#buildingDisplay').append(showBuildingsHTML)
-  // $('#buildingDisplay').empty()
   $('#changePassword').trigger('reset')
 }
 
